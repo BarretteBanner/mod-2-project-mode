@@ -1,0 +1,32 @@
+<head>
+  <title>All Channels</title>
+  <style>
+    body{
+        background-color: blue;
+    }
+    .wrapper{
+        background-color: white;
+        margin: 10%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+    }
+  </style>
+</head>
+<body>
+<div class = "wrapper">
+  <div>Edit your profile</div>
+  <div>Profile photo</div>
+  <div>Picture Goes Here</div>
+  <form>
+    <label for = "fullname">Full Name</label>
+    <input id = "fullname" type = "text" name = "fullname" value = <%=@user.name%>/>
+    <label for = "displayname">Display Name</label>
+    <input id = "displayname" type = "text" name = "displayname" value = <%=@user.name%>/>
+    <label for = "bio">What I do</label>
+    <input id = "bio" type = "text" name = "bio" value = <%=@user.name%>/>
+    <input type = "submit" value = "Update"/>
+  </form>
+  <div>
+</div>
+</body>
