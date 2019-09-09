@@ -33,7 +33,7 @@
   <div class = "main">
     <% @users.each do |user| %>
       <div class = "each">
-        <a class = "button" href = "/users/<%=user.id%>"><%=user%></a>
+        <a class = "button" href = "/user/<%=user.id%>"><%=user.display_name%></a>
       </div>
       <br>
     <% end %>

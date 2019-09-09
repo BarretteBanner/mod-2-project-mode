@@ -13,6 +13,6 @@ class ChannelController < ApplicationController
       end
 
       def show
-        @channel = Channel.find_by(id: params[:id])
+        @channel = Channel.find(params[:id])
       end
 end
