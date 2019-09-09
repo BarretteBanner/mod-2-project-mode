@@ -1,6 +1,7 @@
 class ChannelController < ApplicationController
     
     def new
+        
     end
 
     def create
@@ -11,4 +12,7 @@ class ChannelController < ApplicationController
         redirect_to("/channel/:id")
       end
 
+      def show
+        @channel = Channel.find_by(id: params[:id])
+      end
 end
