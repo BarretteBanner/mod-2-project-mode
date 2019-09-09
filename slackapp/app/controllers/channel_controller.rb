@@ -11,4 +11,8 @@ class ChannelController < ApplicationController
         redirect_to("/channel/:id")
       end
 
+      def show
+        @channel = Channel.find(params[:id])
+      end
+
 end
