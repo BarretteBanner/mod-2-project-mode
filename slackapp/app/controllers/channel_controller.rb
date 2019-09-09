@@ -1,6 +1,7 @@
 class ChannelController < ApplicationController
     
     def new
+        
     end
 
     def create
@@ -14,5 +15,4 @@ class ChannelController < ApplicationController
       def show
         @channel = Channel.find(params[:id])
       end
-
 end
