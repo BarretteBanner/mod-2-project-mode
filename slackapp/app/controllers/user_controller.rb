@@ -1,6 +1,6 @@
 class UserController < ApplicationController
 
-    def /
+    def index
         @users = User.all
     end
     
@@ -18,5 +18,16 @@ class UserController < ApplicationController
           password: params[:password]
         })
         redirect_to("/user")
+      end
+
+      def update
+        @user = User.find(params[:id])
+        @user.update({
+          full_name: params[:fullname],
+          display_name: params[:displayname],
+          bio: params[:bio],
+          age: params[:age],
+        })
+        redirect_to '/user/'
       end
 end

@@ -10,21 +10,47 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(7, 1fr);
+        font-size: 24px;
+    }
+    .form{
+        grid-column: 1 / span 3;
+        grid-row: 3 / span 7;
+    }
+    .title{
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        font-size: 48px;
+    }
+    .picture_title{
+        grid-column: 4;
+        grid-row: 1;
+    }
+    .picture{
+        grid-column: 4;
+        grid-row: 2 / span 4;
+        border: 1px solid black;
     }
   </style>
 </head>
 <body>
 <div class = "wrapper">
-  <div>Edit your profile</div>
-  <div>Profile photo</div>
-  <div>Picture Goes Here</div>
-  <form>
+  <div class = "title">Edit your profile</div>
+  <div class = "picture_title">Profile photo</div>
+  <div class = "picture">Picture Goes Here</div>
+  <form class = "form" action = "/user/<%=@user.id%>" method = POST>
+    <input id = "hidden" type = 'hidden' name = "_method" value = "patch"/>
     <label for = "fullname">Full Name</label>
-    <input id = "fullname" type = "text" name = "fullname" value = <%=@user.name%>/>
+    <input id = "fullname" type = "text" name = "fullname" value = "<%=@user.full_name%>"/>
+    <br>
     <label for = "displayname">Display Name</label>
-    <input id = "displayname" type = "text" name = "displayname" value = <%=@user.name%>/>
+    <input id = "displayname" type = "text" name = "displayname" value = "<%=@user.display_name%>"/>
+    <br>
     <label for = "bio">What I do</label>
-    <input id = "bio" type = "text" name = "bio" value = <%=@user.name%>/>
+    <input id = "bio" type = "text" name = "bio" value = "<%=@user.bio%>"/>
+    <br>
+    <label for = "age">Age</label>
+    <input id = "age" type = "text" name = "age" value = "<%=@user.age%>"/>
+    <br>
     <input type = "submit" value = "Update"/>
   </form>
   <div>
