@@ -11,5 +11,9 @@ class PostController < ApplicationController
         })
         redirect_to("/channel/:id")
       end
+
+      def show
+        @post = Post.find(params[:id])
+      end
       
 end
