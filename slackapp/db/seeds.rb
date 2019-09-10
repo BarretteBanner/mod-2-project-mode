@@ -48,6 +48,39 @@ post2 = Post.create({
     user_id: user2.id,
     channel_id: channel1.id
 })
+post3 = Post.create({
+    content: "I love this place!",
+    user_id: user1.id,
+    channel_id: channel1.id
+})
+
+post4 = Post.create({
+    content: "Free food on 10!",
+    user_id: user2.id,
+    channel_id: channel1.id
+})
+post5 = Post.create({
+    content: "I love this place!",
+    user_id: user1.id,
+    channel_id: channel1.id
+})
+
+post6 = Post.create({
+    content: "Free food on 10!",
+    user_id: user2.id,
+    channel_id: channel1.id
+})
+post7 = Post.create({
+    content: "I love this place!",
+    user_id: user1.id,
+    channel_id: channel1.id
+})
+
+post8 = Post.create({
+    content: "Free food on 10!",
+    user_id: user2.id,
+    channel_id: channel1.id
+})
 
 
 

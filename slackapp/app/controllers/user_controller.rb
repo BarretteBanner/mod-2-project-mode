@@ -13,7 +13,9 @@ class UserController < ApplicationController
 
     def create
         User.create({
-          name: params[:name],
+          full_name: params[:full_name],
+          display_name: params[:display_name],
+          bio: params[:bio],
           age: params[:age],
           password: params[:password]
         })
