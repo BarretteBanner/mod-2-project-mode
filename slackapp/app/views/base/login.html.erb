@@ -1,72 +1,23 @@
-<head>
-  <style>
-  .wrapper {  
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    background-color: #fff;
-    border: 1px solid red;
-  }
-  .lefttitle{
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .buttonarea{
-    grid-column: 9/ span 2;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    align-items: start;
-    text-align: center;
-  }
-  .button1{
-    border: 1px solid black;
-    border-radius: 12px;
-    
-  }
-  .button2{
-    border: 1px solid black;
-    border-radius: 12px;
-  }
- .logintitle{
-   grid-column: 5 / span 2;
-   grid-row: 3;
-   text-align: center;
-   border: 1px solid black;
-   border-radius: 12px;
-   font-size: 48px;
-   align-items: center;
- }
- .form{
-   border: 1px solid red;
-   grid-column: 4 / span 4;
-   grid-row: 5 ;
-   text-align: center;
- }
-  </style>
-</head>
-<body>
-<div class="wrapper">
-  <div class = "lefttitle">SLACK</div>
-  <div class = "buttonarea">
-    <div class = "button1">Learn More</div>
-    <div class = "button2">Login</div>
-  </div>
-  <div class = "logintitle">LOGIN</div>
-  <div class = "form">
-    <form>
-      <label for = "username">Username</label>
-      <input id = "username" type = "text" name = "username"/>
-      <br><br>
-      <label for = "password">Password</label>
-      <input id = "password" type = "text" name = "password"/>
-      <br><br>
-      <input type = "submit" value = "Continue"/>
-    </form>
-  </div>
-</body>
+<!-- Default form login -->
+<form action="base/login" method = "POST">
 
+    <p class="h4 mb-4">Sign in</p>
 
+    <!-- Username -->
+    <input type="email" placeholder="Username">
 
+    <!-- Password -->
+    <input type="password" placeholder="Password">
 
+    <!-- Sign in button -->
+    <button type="submit">Sign in</button>
+
+    <!-- Register -->
+    <p>Not a member?
+        <a href="/base/sign_up">Register</a>
+    </p>
+
+   
+
+</form>
+<!-- Default form login -->

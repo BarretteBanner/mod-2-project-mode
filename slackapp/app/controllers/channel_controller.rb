@@ -1,15 +1,19 @@
 class ChannelController < ApplicationController
     
-    def new
-        
+  def index
+    @channels = Channel.all 
+  end  
+  
+  def new 
+     
     end
 
     def create
-        Channel.create({
+        channel = Channel.create({
           name: params[:name],
           description: params[:description]
         })
-        redirect_to("/channel/:id")
+        redirect_to("/channel/#{channel.id}")
       end
 
       def show

@@ -1,5 +1,5 @@
 <head>
-  <title>All Channels</title>
+  <title>Browse Channels</title>
   <style>
     a{
        text-decoration: none;
@@ -33,7 +33,7 @@
   <div class = "main">
     <% @channels.each do |channel| %>
       <div class = "each">
-        <a class = "button" href = "/channel/<%=channel%>"><%=channel%></a>
+        <a class = "button" href = "/channel/<%=channel.id%>"><%=channel.name%></a>
       </div>
       <br>
     <% end %>
