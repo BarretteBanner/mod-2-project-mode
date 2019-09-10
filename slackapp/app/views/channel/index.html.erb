@@ -4,19 +4,35 @@
     a{
        text-decoration: none;
     }
-    .title{
-      grid-column: 2;
-      grid-row: 1;
-      text-align: center;
-      color: blue;
-        }
     .big{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 1em;
+    }
+    .menu{
+        grid-column: 2;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        justify-items: stretch;
+        align-items: center;
+        text-align: center;
+        grid-gap: 1px;
+    }
+    .one{
+        border: 1px solid black;
+        grid-column: 1;
+        background-color: lightblue;
+    }
+    .two{
+        border: 1px solid black;
+        grid-column: 2;
+        background-color: white;
     }
     .main{
       grid-column: 2;
-      grid-row: 2;
+      grid-row: 3;
       text-align: center;
     }
     .each {
@@ -27,8 +43,9 @@
 </head>
 <body>
 <div class = "big">
-  <div class = "title">
-    <h2>Browse Channels</h2>
+  <div class = "menu">
+    <a class = "one" href = "/channel/"><div>Channels</div></a>
+    <a class = "two" href = "/user/"><div>Users</div></a>
   </div>
   <div class = "main">
     <% @channels.each do |channel| %>
@@ -40,3 +57,5 @@
   </div>
 </div>
 </body>
+
+
