@@ -1,0 +1,28 @@
+<head>
+  <title><%=User.fullname%></title>
+  <style>
+    .big{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-gap: 1em;
+        align-items: stretch;
+        font-size: 30px;
+    }
+    .menu{
+        grid-column: 1;
+        grid-row: 1 / span 4;
+        border: 1px solid black;
+    }
+    .content{
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 4;
+    }
+    .post{
+        border: 1px solid grey;
+    }
+  </style>
+</head>
+<body>
+<%=User.fullname%>
+</body>
