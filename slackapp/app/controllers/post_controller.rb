@@ -4,16 +4,16 @@ class PostController < ApplicationController
     end
 
     def create
-        Post.create({
-          channel: params[:channel],
-          user: params[:user],
+        @post = Post.create({
+          channel_id: params[:channel_id],
+          user_id: params[:user_id],
           content: params[:content]
         })
-        redirect_to("/channel/:id")
+        redirect_to("/channel/#{params[:channel_id]}")
       end
 
       def show
-        @post = Post.find(params[:id])
+        @post = Post.find(params[id])
       end
       
 end

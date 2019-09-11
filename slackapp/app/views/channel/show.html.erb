@@ -4,7 +4,7 @@
     .big{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(7, 1fr);
         grid-gap: 1em;
         align-items: stretch;
         font-size: 30px;
@@ -21,14 +21,21 @@
     .post{
         border: 1px solid grey;
     }
+    .message{
+        grid-row: 5;
+        grid-column: 2 / span 2;
+    }
+    .it{
+        width: 100%;
+    }
   </style>
 </head>
 <body>
 <div class = "big">
     <div class = "menu">
-        <div>Back Button</div>
-        <div><%=@channel.name%></div>
-        <div><%=@channel.description%></div>
+        <a class = "button" href = "/channel/"><div>Back</div></a>
+        <div>Name: <%=@channel.name%></div>
+        <div>Description: <%=@channel.description%></div>
     </div>
     <%@channel.posts.each do |post|%>
         <div class = "content">
@@ -37,6 +44,14 @@
             <div><%=post.content%></div>
         </div>
         <%end%>
+    </div>
+    <br>
+    <div class = "message">
+        <form action = "/post/" method = POST>
+            <input class = "it" type="text" id="defaultRegisterFormEmail"  placeholder="Message" name = "content">
+            <input type = "hidden" value = <%=@channel.id%> name = "channel_id"/>
+            <input type = "hidden" value = <%=@users.sample.id%> name = "user_id"/>
+        </form>
     </div>
 </div>
 </body>
