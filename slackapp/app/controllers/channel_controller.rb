@@ -1,6 +1,7 @@
 class ChannelController < ApplicationController
     
   def index
+    @username = current_user.display_name
     @channels = Channel.all 
     @users = User.all
   end  
