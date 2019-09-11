@@ -12,13 +12,14 @@ class UserController < ApplicationController
     end
 
     def create
-        User.create({
+        user = User.create({
           full_name: params[:full_name],
           display_name: params[:display_name],
           bio: params[:bio],
           age: params[:age],
           password: params[:password]
         })
+        session[:current_user_id] = user.id 
         redirect_to("/user")
       end
 

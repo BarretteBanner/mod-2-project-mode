@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get "base/analytics", to: "base#analytics"
   get "base/sign_up", to: "base#sign_up"
   get "base/login", to: "base#login"
+  post "application/authenticate", to: "application#authenticate"
 end
