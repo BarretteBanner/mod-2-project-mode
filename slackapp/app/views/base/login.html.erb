@@ -75,6 +75,10 @@
 		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
 			background-color: #4D394B !important;
 		}
+        .text-center.border.border-light.p-5 {
+            color: black !important;
+            font-family: Slack-Circular-Pro,"Helvetica Neue", Helvetica, "Segoe UI", Tahoma, Arial, sans-serif !important;
+        }
     </style>
     </head>
     <body>
@@ -89,6 +93,7 @@
 				</div>
 				<div class="d-flex justify-content-center form_container">
                     <form class="text-center border border-light p-5" action="application/authenticate" method = POST>
+                    <h1>Login</h1>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -101,17 +106,12 @@
 							</div>
 							<input type="password" name="" class="form-control input_pass" value="" placeholder="password" name = "password">
 						</div>
-					</form>
-				</div>
-				<div class="d-flex justify-content-center mt-3 login_container">
-					<button type="button" name="button" class="btn login_btn">Login</button>
-				</div>
-				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
+                        <button type="button" name="button" class="btn login_btn">Login</button>
+										<div class="d-flex justify-content-center links">
 						Don't have an account?<a href="../sign_up">Register</a>
-					</div>
+				</div>
                         </form>
-					</div>
+					
 				</div>
 			</div>
 		</div>
