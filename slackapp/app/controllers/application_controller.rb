@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
             session[:current_user_id] = user.id 
             redirect_to "/channel/"
         else
-            redirect_to "/login"
+            redirect_to "/base/login"
         end
     end
     

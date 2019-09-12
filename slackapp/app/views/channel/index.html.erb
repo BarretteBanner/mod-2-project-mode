@@ -42,7 +42,13 @@
   </style>
 </head>
 <body>
+Hello <%=@user.display_name%>
 <div class = "big">
+    <div class = "new">
+        <a class = "button" href = "/channel/new">Create New Channel</a>
+        <br>
+        <a class = "button" href = "/user/<%=@user.id%>/edit">Edit Profile</a> 
+    </div>
   <div class = "menu">
     <a class = "one" href = "/channel/"><div>Channels</div></a>
     <a class = "two" href = "/user/"><div>Users</div></a>

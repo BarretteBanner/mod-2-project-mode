@@ -1,7 +1,7 @@
 class ChannelController < ApplicationController
     
   def index
-    @username = current_user.display_name
+    @user = current_user
     @channels = Channel.all 
     @users = User.all
   end  
@@ -21,5 +21,6 @@ class ChannelController < ApplicationController
       def show
         @channel = Channel.find(params[:id])
         @users = User.all
+        @user = current_user
       end
 end
