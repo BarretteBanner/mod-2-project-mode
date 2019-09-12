@@ -1,181 +1,145 @@
- <!DOCTYPE html>
- <head>
+<!DOCTYPE html>
+
+<head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<style>
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+    <style>
 
-body {
-    background: #4D394B !important;
-	font-family: 'Roboto', sans-serif;
-	color: #4D394B !important;
-	line-height: 22px;	
-}
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 400;
-	color: white;
-	margin-top:5px;
-	margin-bottom:5px;
-}
-h1, h2, h3 {
-	text-transform:uppercase;
-    color: white;
-}
 
-input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 12px;
-    cursor: pointer;
-    opacity: 1;
-    filter: alpha(opacity=1);    
-}
+        body {
+            
+            background: #4D394B !important;
+            color: #4D394B !important;
+	        line-height: 22px;	
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
 
-.form-inline .form-group{
-    margin-left: 0;
-    margin-right: 0;
-}
-.control-label {
-    color:white;
-}
-</style>
+	        font-weight: 400;
+	        color: white;
+	        margin-top:5px;
+	        margin-bottom:5px;
+        }
+        
+        h1, h2, h3 {
+	        text-transform:uppercase;
+            color: white;
+        }
+
+        input.upload {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 1;
+            filter: alpha(opacity=1); 
+        }
+
+        .form-inline .form-group{
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+        .control-label {
+        color: white;
+        }
+
+        #exampleFormControlSelect1 {
+            margin-left: 15px !important;
+        }
+
+        .btn {
+            background-color: #4C9689 !important;
+            border-color: #38978D;
+            }
+
+    </style>
 </head>
 
 <body>
-<div class="container">
-	<div class="row">
-    <div class="col-md-8">
-      <section>      
-        <h1 class="entry-title"><span>Sign Up</span> </h1>
-        <hr>
-            <form class="form-horizontal" method= POST action="/user/" name="signup" id="signup" enctype="multipart/form-data" >     
-        <div class="form-group">
-          <label class="control-label col-sm-3">Username</label>     
-          <div class="col-md-8 col-sm-9">
-              <div class="input-group">
-              <span class="input-group-addon"></span>
-              <input type="email" class="form-control" name="emailid" id="emailid" placeholder="Enter your username here" value="">
+    <div class="container">
+	    <div class="row">
+            <div class="col-md-8">
+                
+                <section>      
+                <h1 class="entry-title"><span>Sign Up</span> </h1>
+                <hr>
+                        
+                <form class="form-horizontal" method= POST action="/user/" name="signup" id="signup" enctype="multipart/form-data" >     
+                            
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Display Name <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-9">
+                        <input type="text" class="form-control" name="display_name" id="display_name" placeholder="Enter your display name here" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Full Name <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-9">
+                        <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your name here" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Bio <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-9">
+                        <input type="text" class="form-control" name="bio" id="bio" placeholder="Enter a short bio here" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Password <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-8">
+                            <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Choose password (at least 8 characters and 1 digit)" value="">
+                            </div>   
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Profile Photo <br>
+                    <small>(optional)</small></label>
+                        <div class="col-md-8 col-sm-8">
+                            <div class="input-group"> <span class="input-group-addon" id="file_upload"><i class="glyphicon glyphicon-upload"></i></span>
+                            <input type="file" name="profile_pic" id="file_nm" class="form-control upload" placeholder="" aria-describedby="file_upload">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Age <span class="text-danger">*</span></label>
+                        <div class="col-md-1 col-sm-9">
+                            <div class="form-group">
+                                <select class="form-control" id="exampleFormControlSelect1" name = "age">
+                                    <%number = 0%>
+                                    <%100.times do %>
+                                        <option><%=number%></option>
+                                        <%number += 1%>
+                                    <%end%>
+                                </select>
+                            </div>
+                        </div>
+                    </div>       
+
+                    <div class="form-group">
+                        <div class="col-xs-offset-3 col-xs-10">
+                        <input name="Submit" type="submit" value="Sign Up" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </form>
+                </section>
+                </div>
             </div>
-            </div>
         </div>
-        
-        <div class="form-group">
-          <label class="control-label col-sm-3">Full Name <span class="text-danger">*</span></label>
-          <div class="col-md-8 col-sm-9">
-            <input type="text" class="form-control" name="mem_name" id="mem_name" placeholder="Enter your name here" value="">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="control-label col-sm-3">Set Password <span class="text-danger">*</span></label>
-          <div class="col-md-5 col-sm-8">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input type="password" class="form-control" name="password" id="password" placeholder="Choose password (5-15 chars)" value="">
-           </div>   
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="control-label col-sm-3">Confirm Password <span class="text-danger">*</span></label>
-          <div class="col-md-5 col-sm-8">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm your password" value="">
-            </div>  
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="control-label col-sm-3">Profile Photo <br>
-          <small>(optional)</small></label>
-          <div class="col-md-5 col-sm-8">
-            <div class="input-group"> <span class="input-group-addon" id="file_upload"><i class="glyphicon glyphicon-upload"></i></span>
-              <input type="file" name="file_nm" id="file_nm" class="form-control upload" placeholder="" aria-describedby="file_upload">
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="col-xs-offset-3 col-md-8 col-sm-9"><span class="text-muted"><span class="label label-danger">Note:-</span> By clicking Sign Up, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Policy</a>, including our <a href="#">Cookie Use</a>.</span> </div>
-        </div>
-        <div class="form-group">
-          <div class="col-xs-offset-3 col-xs-10">
-            <input name="Submit" type="submit" value="Sign Up" class="btn btn-primary">
-          </div>
-        </div>
-      </form>
     </div>
-</div>
-</div>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-<!-- Default form register -->
-
-
-    <p class="h4 mb-4">Sign up</p>
-
-    <div class="form-row mb-4">
-    <input type="text" id="defaultRegisterFormFirstName" class="form-control" Email ID placeholder="Full name" name = "full_name" >
-        <div class="col">
-            <!-- First name -->
-
-        </div>
-        <div class="col">
-            <!-- Last name -->
-            <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Display name" name = "display_name">
-        </div>
-    </div>
-
-    <!-- E-mail -->
-    <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Bio" name = "bio">
-
-    <!-- Password -->
-    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name = "password">
-    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4" >
-        At least 8 characters and 1 digit
-    </small>
-
-
- <!-- Age -->
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Age</label>
-    <select class="form-control" id="exampleFormControlSelect1" name = "age">
-        <%number = 0%>
-        <%100.times do %>
-            <option><%=number%></option>
-            <%number += 1%>
-        <%end%>
-    </select>
-  </div>
-    
-
-    <!-- Sign up button -->
-    <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
-
-    <hr>
-
-
-    <!-- Terms of service -->
-    <p>By clicking
-        <em>Sign up</em> you agree to our
-        <a href="" target="_blank">terms of service</a>
-
-</form>
-<!-- Default form register -->
