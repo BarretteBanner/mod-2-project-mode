@@ -33,8 +33,8 @@ user3 = User.create({
 })
 
 channel1 = Channel.create({
-    name: "Flatirion SE",
-    description: "Your go to for code related questions."
+    name: "Flatiron SE",
+    description: "Your go to for code-related questions."
 })
 
 post1 = Post.create({

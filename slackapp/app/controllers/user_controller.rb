@@ -13,6 +13,7 @@ class UserController < ApplicationController
     end
 
     def create
+     
         user = User.create({
           full_name: params[:full_name],
           display_name: params[:display_name],
