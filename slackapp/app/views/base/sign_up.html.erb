@@ -1,135 +1,145 @@
- <!DOCTYPE html>
- <head>
+<!DOCTYPE html>
+
+<head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<style>
+    <style>
 
 
-body {
-    background: #4D394B !important;
+        body {
+            
+            background: #4D394B !important;
+            color: #4D394B !important;
+	        line-height: 22px;	
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
 
-	color: #4D394B !important;
-	line-height: 22px;	
-}
-h1, h2, h3, h4, h5, h6 {
+	        font-weight: 400;
+	        color: white;
+	        margin-top:5px;
+	        margin-bottom:5px;
+        }
+        
+        h1, h2, h3 {
+	        text-transform:uppercase;
+            color: white;
+        }
 
-	font-weight: 400;
-	color: white;
-	margin-top:5px;
-	margin-bottom:5px;
-}
-h1, h2, h3 {
-	text-transform:uppercase;
-    color: white;
-}
+        input.upload {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 1;
+            filter: alpha(opacity=1); 
+        }
 
-input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 12px;
-    cursor: pointer;
-    opacity: 1;
-    filter: alpha(opacity=1); 
-}
+        .form-inline .form-group{
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+        .control-label {
+        color: white;
+        }
 
-.form-inline .form-group{
-    margin-left: 0;
-    margin-right: 0;
-}
-.control-label {
-    color:white;
-}
-#exampleFormControlSelect1 {
-    margin-left: 15px !important;
-}
+        #exampleFormControlSelect1 {
+            margin-left: 15px !important;
+        }
 
-.btn {
-    background-color: #4C9689 !important;
-    border-color: #38978D;
-    }
+        .btn {
+            background-color: #4C9689 !important;
+            border-color: #38978D;
+            }
 
-</style>
+    </style>
 </head>
 
 <body>
-<div class="container">
-	<div class="row">
-        <div class="col-md-8">
-            <section>      
+    <div class="container">
+	    <div class="row">
+            <div class="col-md-8">
+                
+                <section>      
                 <h1 class="entry-title"><span>Sign Up</span> </h1>
                 <hr>
+                        
                 <form class="form-horizontal" method= POST action="/user/" name="signup" id="signup" enctype="multipart/form-data" >     
-                    
+                            
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Display Name <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-9">
+                        <input type="text" class="form-control" name="display_name" id="display_name" placeholder="Enter your display name here" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Full Name <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-9">
+                        <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your name here" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Bio <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-9">
+                        <input type="text" class="form-control" name="bio" id="bio" placeholder="Enter a short bio here" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Password <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-8">
+                            <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Choose password (at least 8 characters and 1 digit)" value="">
+                            </div>   
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Profile Photo <br>
+                    <small>(optional)</small></label>
+                        <div class="col-md-8 col-sm-8">
+                            <div class="input-group"> <span class="input-group-addon" id="file_upload"><i class="glyphicon glyphicon-upload"></i></span>
+                            <input type="file" name="profile_pic" id="file_nm" class="form-control upload" placeholder="" aria-describedby="file_upload">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Age <span class="text-danger">*</span></label>
+                        <div class="col-md-1 col-sm-9">
                             <div class="form-group">
-          <label class="control-label col-sm-3">Display Name <span class="text-danger">*</span></label>
-          <div class="col-md-8 col-sm-9">
-            <input type="text" class="form-control" name="display_name" id="display_name" placeholder="Enter your display name here" value="">
-          </div>
-        </div>
+                                <select class="form-control" id="exampleFormControlSelect1" name = "age">
+                                    <%number = 0%>
+                                    <%100.times do %>
+                                        <option><%=number%></option>
+                                        <%number += 1%>
+                                    <%end%>
+                                </select>
+                            </div>
+                        </div>
+                    </div>       
 
-        <--- full name --->
-        <div class="form-group">
-          <label class="control-label col-sm-3">Full Name <span class="text-danger">*</span></label>
-          <div class="col-md-8 col-sm-9">
-            <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your name here" value="">
-          </div>
-        </div>
+                    <div class="form-group">
+                        <div class="col-xs-offset-3 col-xs-10">
+                        <input name="Submit" type="submit" value="Sign Up" class="btn btn-primary">
+                        </div>
+                    </div>
 
-        <div class="form-group">
-        <label class="control-label col-sm-3">Age <span class="text-danger">*</span></label>
-            <div class="col-md-1 col-sm-9">
-                <div class="form-group">
-                    <select class="form-control" id="exampleFormControlSelect1" name = "age">
-                        <%number = 0%>
-                            <%100.times do %>
-                            <option><%=number%></option>
-                            <%number += 1%>
-                        <%end%>
-                    </select>
+                </form>
+                </section>
                 </div>
             </div>
         </div>
-
-        <div class="form-group">
-          <label class="control-label col-sm-3">Bio <span class="text-danger">*</span></label>
-          <div class="col-md-8 col-sm-9">
-            <input type="text" class="form-control" name="bio" id="bio" placeholder="Enter a short bio here" value="">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="control-label col-sm-3">Password <span class="text-danger">*</span></label>
-          <div class="col-md-8 col-sm-8">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input type="password" class="form-control" name="password" id="password" placeholder="Choose password (at least 8 characters and 1 digit)" value="">
-           </div>   
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="control-label col-sm-3">Profile Photo <br>
-          <small>(optional)</small></label>
-          <div class="col-md-5 col-sm-8">
-            <div class="input-group"> <span class="input-group-addon" id="file_upload"><i class="glyphicon glyphicon-upload"></i></span>
-              <input type="file" name="file_nm" id="file_nm" class="form-control upload" placeholder="" aria-describedby="file_upload">
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="col-xs-offset-3 col-xs-10">
-            <input name="Submit" type="submit" value="Sign Up" class="btn btn-primary">
-          </div>
-        </div>
-      </form>
     </div>
-</div>
-</div>
 </body>
+
 </html>

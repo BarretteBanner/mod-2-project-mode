@@ -1,19 +1,21 @@
- <!DOCTYPE html>
- <head>
+<!DOCTYPE html>
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    
     <style>
-		body,
+		
+        body,
 		html {
 			margin: 0;
 			padding: 0;
 			height: 100%;
 			background: #4D394B !important;
-           
-		}
+        }
+
 		.user_card {
 			height: 400px;
 			width: 350px;
@@ -30,6 +32,7 @@
 			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			border-radius: 5px;
 		}
+
 		.brand_logo_container {
 			position: absolute;
 			height: 170px;
@@ -40,59 +43,70 @@
 			padding: 10px;
 			text-align: center;
 		}
+
 		.brand_logo {
 			height: 150px;
 			width: 150px;
 			border-radius: 50%;
 			border: 2px solid white;
 		}
+
 		.form_container {
 			margin-top: 100px;
 		}
+
 		.login_btn {
 			width: 100%;
 			background: #4D394B !important;
 			color: white !important;
 		}
+
 		.login_btn:focus {
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
+
 		.login_container {
 			padding: 0 2rem;
 		}
+
 		.input-group-text {
 			background: #4D394B !important;
 			color: white !important;
 			border: 0 !important;
 			border-radius: 0.25rem 0 0 0.25rem !important;
 		}
+
 		.input_user,
 		.input_pass:focus {
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
+
 		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
 			background-color: #4D394B !important;
 		}
+
         .text-center.border.border-light.p-5 {
-            color: black !important;
-         
+            color: black !important;        
         }
+
     </style>
-    </head>
-    <body>
+</head>
+
+<body>
 
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-						<img src="https://static.dezeen.com/uploads/2019/01/slack-rebrand-pentagram-michael-bierut_dezeen_426-sq-300x300.gif" class="brand_logo" alt="Logo">
+					<img src="https://static.dezeen.com/uploads/2019/01/slack-rebrand-pentagram-michael-bierut_dezeen_426-sq-300x300.gif" class="brand_logo" alt="Logo">
 					</div>
 				</div>
-				<div class="d-flex justify-content-center form_container">
-                    <form class="text-center border border-light p-5" action="application/authenticate" method = POST>
+				
+                <div class="d-flex justify-content-center form_container">
+                    <form class="text-center border border-light p-5" action="//localhost:3000/application/authenticate" method = POST>
                     <h1>Login</h1>
 						<div class="input-group mb-3">
 							<div class="input-group-append">
@@ -104,9 +118,9 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password" name = "password">
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="password" name = "password">
 						</div>
-                        <button type="button" name="button" class="btn login_btn">Login</button>
+                        <input type="submit" name="button" class="btn login_btn">
 										<div class="d-flex justify-content-center links">
 						Don't have an account?<a href="../sign_up">Register</a>
 				</div>
