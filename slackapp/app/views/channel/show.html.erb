@@ -50,7 +50,7 @@
         <form action = "/post/" method = POST>
             <input class = "it" type="text" id="defaultRegisterFormEmail"  placeholder="Message" name = "content">
             <input type = "hidden" value = <%=@channel.id%> name = "channel_id"/>
-            <input type = "hidden" value = <%=@users.sample.id%> name = "user_id"/>
+            <input type = "hidden" value = <%=@user.id%> name = "user_id"/>
         </form>
     </div>
 </div>

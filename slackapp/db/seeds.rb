@@ -24,7 +24,7 @@ user2 = User.create({
     password: "password",
 })
 
-user1 = User.create({
+user3 = User.create({
     full_name: "Guss Edwards",
     display_name: "German Dude",
     bio: "I love to explore!",

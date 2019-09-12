@@ -1,0 +1,129 @@
+<head>
+    <title> Analytics | Dashboard</title>
+    <style>
+    .big{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 3, 1fr);
+        grid-template-rows: repeat(auto-fit, 3, 1fr);
+        grid-gap: 5px;
+        background-color: white;
+        border: 1px solid white;
+        height: 100vh;
+        font-size: 48px;
+        color: white;
+    }
+    .one{
+        grid-column: 2;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        max-width: 100%;
+        background-color: black;
+    }
+    .one1{
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        text-align: center;
+    }
+    .one2{
+        grid-column: 2;
+        grid-row: 2 / span 2;
+        text-align: center;
+    }
+    .two{
+        grid-column: 1;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        max-width: 100%;
+        background-color: black;
+    }
+    .two1{
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        text-align: center;
+    }
+    .two2{
+        grid-column: 2;
+        grid-row: 2 / span 2;
+        text-align: center;
+    }
+    .three{
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 2;
+        background-color: black;
+        text-align: center;
+    }
+    .four{
+        grid-column: 1;
+        grid-row: 3;
+        background-color: black;
+    }
+    .five{
+        grid-column: 1;
+        grid-row: 2;
+        background-color: black;
+    }
+    .five1{
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        text-align: center;
+    }
+    .five2{
+        grid-column: 2;
+        grid-row: 2 / span 2;
+        text-align: center;
+    }
+    .six{
+        grid-column: 3;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        max-width: 100%;
+        background-color: black;
+    }
+    .six1{
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        text-align: center;
+    }
+    .six2{
+        grid-column: 2;
+        grid-row: 2 / span 2;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class = "big">
+        <div class = "one">
+            <div class = "one1">Total Users</div>
+            <div class = "one2"><%=@total_users%></div>
+        </div>
+        <div class = "two">
+            <div class = "two1">Total Channels</div>
+            <div class = "two2"><%=@total_channels%></div>
+        </div>
+        <div class = "three">
+            <div>Most recent users</div>
+            <%@recent_users.each do |user|%>
+                <div><%=user.display_name%></div>
+            <%end%>
+        </div>
+        <div class = "four">
+            <div class = "six1">Total Posts</div>
+            <div class = "six2"><%=@total_posts%></div>
+        </div>
+        <div class = "five">
+            <div class = "six1">Most Popular Channel</div>
+            <div class = "six2">@<%=@most_popular_channel%></div>
+        </div>
+        <div class = "six">
+            <div class = "six1">User With Most Posts</div>
+            <div class = "six2">@<%=@most_post_user%></div>
+        </div>
+    </div>
+</body>
