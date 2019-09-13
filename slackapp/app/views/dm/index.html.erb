@@ -1,22 +1,8 @@
 <head>
-  <title>Browse Channels</title>
+  <title>Browse Your DM's</title>
   <style>
-  
-    body,
-		html {
-			margin: 0;
-			padding: 0;
-			height: 100%;
-			background: #4D394B !important;
-        }
-      
-    h2 {
-      color: lightgray;
-    }
-
     a{
-      text-decoration: none;
-      color: white;
+       text-decoration: none;
     }
     .big{
       display: grid;
@@ -36,19 +22,18 @@
     }
     .one{
         border: 1px solid black;
-        grid-column: 1; 
-        background-color: #0C9689 !important;
+        grid-column: 1;
+        background-color: white;
     }
-
     .two{
         border: 1px solid black;
         grid-column: 2;
-        background-color: #5C9689 !important;
+        background-color: white;
     }
     .three{
         border: 1px solid black;
         grid-column: 3;
-        background-color: white;
+        background-color: lightblue;
     }
     .main{
       grid-column: 2;
@@ -62,7 +47,7 @@
   </style>
 </head>
 <body>
-<h2>Hello <%=@user.display_name%></h2>
+Hello <%=@user.display_name%>
 <div class = "big">
     <div class = "new">
         <a class = "button" href = "/channel/new">Create New Channel</a>
@@ -70,6 +55,7 @@
         <a class = "button" href = "/user/<%=@user.id%>/edit">Edit Profile</a> 
         <br>
         <a class = "button" href = "/dm/new">Start New DM</a>
+
     </div>
   <div class = "menu">
     <a class = "one" href = "/channel/"><div>Channels</div></a>
@@ -77,9 +63,9 @@
     <a class = "three" href = "/dm/"><div>DM's</div></a>
   </div>
   <div class = "main">
-    <% @channels.each do |channel| %>
+    <% @all_dm.each do |dm| %>
       <div class = "each">
-        <a class = "button" href = "/channel/<%=channel.id%>"><%=channel.name%></a>
+        <a class = "button" href = "/dm/<%=dm.name%>"><%=dm.user1name%></a>
       </div>
       <br>
     <% end %>

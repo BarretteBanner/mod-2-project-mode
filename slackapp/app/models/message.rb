@@ -1,4 +1,4 @@
-class Post < ApplicationRecord
-    belongs_to :dm
+class Message < ApplicationRecord
     belongs_to :user
+    belongs_to :dm
 end

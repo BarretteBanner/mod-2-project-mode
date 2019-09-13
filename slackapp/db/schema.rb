@@ -19,10 +19,14 @@ ActiveRecord::Schema.define(version: 2019_09_12_161807) do
 
   create_table "dms", force: :cascade do |t|
     t.string "name"
+    t.integer "user1"
+    t.integer "user2"
+    t.string "user1name"
+    t.string "user2name"
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string "message"
+    t.string "content"
     t.integer "dm_id"
     t.integer "user_id"
   end
