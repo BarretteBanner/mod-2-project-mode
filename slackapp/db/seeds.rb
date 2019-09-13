@@ -1,6 +1,8 @@
 User.destroy_all
 Post.destroy_all
 Channel.destroy_all
+Dm.destroy_all
+Message.destroy_all
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -82,5 +84,33 @@ post8 = Post.create({
     channel_id: channel1.id
 })
 
+dm1 = Dm.create({
+    name: "#{user1.id}/#{user2.id}",
+    user1: user1.id,
+    user2: user2.id,
+    user1name: user1.display_name,
+    user2name: user2.display_name
+})
+dm2 = Dm.create({
+    name: "#{user2.id}/#{user1.id}",
+    user1: user2.id,
+    user2: user1.id,
+    user1name: user2.display_name,
+    user2name: user1.display_name
+})
+dm2 = Dm.create({
+    name: "#{user2.id}/#{user1.id}",
+    user1: user2.id,
+    user2: user1.id,
+    user1name: user2.display_name,
+    user2name: user1.display_name
+})
+
+
+message1 = Message.create({
+    content: "Yay, first message!",
+    dm_id: dm1.id,
+    user_id: user1.id
+})
 
 

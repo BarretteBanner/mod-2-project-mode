@@ -1,3 +1,5 @@
 class Dm < ApplicationRecord
-    has_many :messages
+    has_many :users
+    has_many :messages #, through: :users
 end
+

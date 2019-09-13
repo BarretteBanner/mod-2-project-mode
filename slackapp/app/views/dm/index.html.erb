@@ -1,5 +1,5 @@
 <head>
-  <title>Browse Channels</title>
+  <title>Browse Your DM's</title>
   <style>
     a{
        text-decoration: none;
@@ -23,7 +23,7 @@
     .one{
         border: 1px solid black;
         grid-column: 1;
-        background-color: lightblue;
+        background-color: white;
     }
     .two{
         border: 1px solid black;
@@ -33,7 +33,7 @@
     .three{
         border: 1px solid black;
         grid-column: 3;
-        background-color: white;
+        background-color: lightblue;
     }
     .main{
       grid-column: 2;
@@ -55,6 +55,7 @@ Hello <%=@user.display_name%>
         <a class = "button" href = "/user/<%=@user.id%>/edit">Edit Profile</a> 
         <br>
         <a class = "button" href = "/dm/new">Start New DM</a>
+
     </div>
   <div class = "menu">
     <a class = "one" href = "/channel/"><div>Channels</div></a>
@@ -62,9 +63,9 @@ Hello <%=@user.display_name%>
     <a class = "three" href = "/dm/"><div>DM's</div></a>
   </div>
   <div class = "main">
-    <% @channels.each do |channel| %>
+    <% @all_dm.each do |dm| %>
       <div class = "each">
-        <a class = "button" href = "/channel/<%=channel.id%>"><%=channel.name%></a>
+        <a class = "button" href = "/dm/<%=dm.name%>"><%=dm.user1name%></a>
       </div>
       <br>
     <% end %>

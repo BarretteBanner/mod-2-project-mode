@@ -1,0 +1,12 @@
+<h2>Select the user you'd like to DM</h2>
+<form action="/dm/" method = POST>
+<label for = "user_to">User</label>
+<select name = "user1">
+<%@users.each do |user|%>
+    <option value = "<%=user.id%>"><%=user.display_name%></option>
+<%end%>
+</select>
+<input type = "hidden" value = <%=@user.id%> name = "user2"/>
+<br>
+<input type = "submit" value = "Start Messaging"/>
+</form>
