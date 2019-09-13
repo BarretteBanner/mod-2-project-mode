@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
         user = User.find_by({ display_name: params[:display_name] })
         if user && user.authenticate(params[:password])
             session[:current_user_id] = user.id 
+            puts "yep"
             redirect_to "/channel/"
         else
             redirect_to "/base/login"

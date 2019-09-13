@@ -1,5 +1,5 @@
- <!DOCTYPE html>
- <head>
+<!DOCTYPE html>
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -61,6 +61,18 @@
 		.login_container {
 			padding: 0 2rem;
 		}
+
+        .login_btn {
+			width: 100%;
+			background: #4D394B !important;
+			color: white !important;
+		}
+
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+        
 		.input-group-text {
 			background: #4D394B !important;
 			color: white !important;
@@ -101,8 +113,8 @@
 							</div>
 							<input type="text" name="description" class="form-control input_pass" value="" placeholder="description">
 						</div>
-                        <input type="button" value ="Submit" name="button" class="btn">
-					</form>
+                        <input type="submit" value ="Submit" name="button" class="btn login_btn">
+                    </form>
 				</div>
 				<div class="d-flex justify-content-center mt-3 login_container">
 					

@@ -1,58 +1,111 @@
+<!DOCTYPE html>
+
 <head>
-  <title>All Channels</title>
-  <style>
-    body{
-        background-color: blue;
-    }
-    .wrapper{
-        background-color: white;
-        margin: 10%;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(7, 1fr);
-        font-size: 24px;
-    }
-    .form{
-        grid-column: 1 / span 3;
-        grid-row: 3 / span 7;
-    }
-    .title{
-        grid-column: 1 / span 2;
-        grid-row: 1;
-        font-size: 48px;
-    }
-    .picture_title{
-        grid-column: 4;
-        grid-row: 1;
-    }
-    .picture{
-        grid-column: 4;
-        grid-row: 2 / span 4;
-        border: 1px solid black;
-    }
-  </style>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <style>
+
+
+        body {
+            
+            background: #4D394B !important;
+            color: #4D394B !important;
+	        line-height: 22px;	
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+
+	        font-weight: 400;
+	        color: white;
+	        margin-top:5px;
+	        margin-bottom:5px;
+        }
+        
+        h1, h2, h3 {
+	        text-transform:uppercase;
+            color: white;
+        }
+
+        input.upload {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 1;
+            filter: alpha(opacity=1); 
+        }
+
+        .form-inline .form-group{
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+        .control-label {
+        color: white;
+        }
+
+        #exampleFormControlSelect1 {
+            margin-left: 15px !important;
+        }
+
+        .btn {
+            background-color: #4C9689 !important;
+            border-color: #38978D;
+            }
+
+    </style>
 </head>
+
 <body>
-<div class = "wrapper">
-  <div class = "title">Edit your profile</div>
-  <div class = "picture_title">Profile photo</div>
-  <div class = "picture">Picture Goes Here</div>
-  <form class = "form" action = "/user/<%=@user.id%>" method = POST>
-    <input id = "hidden" type = 'hidden' name = "_method" value = "patch"/>
-    <label for = "fullname">Full Name</label>
-    <input id = "fullname" type = "text" name = "fullname" value = "<%=@user.full_name%>"/>
-    <br>
-    <label for = "displayname">Display Name</label>
-    <input id = "displayname" type = "text" name = "displayname" value = "<%=@user.display_name%>"/>
-    <br>
-    <label for = "bio">What I do</label>
-    <input id = "bio" type = "text" name = "bio" value = "<%=@user.bio%>"/>
-    <br>
-    <label for = "age">Age</label>
-    <input id = "age" type = "text" name = "age" value = "<%=@user.age%>"/>
-    <br>
-    <input type = "submit" value = "Update"/>
-  </form>
-  <div>
-</div>
+    <div class="container">
+	    <div class="row">
+            <div class="col-md-8">
+                
+                <section>      
+                <h1 class="entry-title"><span>Edit Your Profile</span> </h1>
+                <hr>
+                        
+    
+                    <form class = "form-horizontal" action = "/user/<%=@user.id%>" method = POST>
+                    <input id = "hidden" type = 'hidden' name = "_method" value = "patch"/>          
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Display Name <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-9">
+                        <input type="text" class="form-control" name="display_name" id="display_name" value = "<%=@user.display_name%>" >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Full Name <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-9">
+                        <input type="text" class="form-control" name="full_name" id="full_name" value = "<%=@user.full_name%>">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="control-label col-sm-3">Bio <span class="text-danger">*</span></label>
+                        <div class="col-md-8 col-sm-9">
+                        <input type="text" class="form-control" name="bio" id="bio" value = "<%=@user.bio%>">
+                        </div>
+                    </div>
+      
+                    <div class="form-group">
+                        <div class="col-xs-offset-3 col-xs-10">
+                        <input name="Submit" type="submit" value="Update" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </form>
+                </section>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
+</html>

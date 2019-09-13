@@ -8,15 +8,21 @@
         grid-gap: 1em;
         align-items: stretch;
         font-size: 30px;
+        background: #4D394B !important;
     }
     .menu{
         grid-column: 1;
         grid-row: 1 / span 4;
         border: 1px solid black;
     }
+
+    .menu p {
+        color: white;
+    }
     .content{
         grid-column: 2 / span 2;
         grid-row: 1 / span 4;
+                background: lightgray;
     }
     .post{
         border: 1px solid grey;
@@ -34,8 +40,8 @@
 <div class = "big">
     <div class = "menu">
         <a class = "button" href = "/channel/"><div>Back</div></a>
-        <div>Name: <%=@channel.name%></div>
-        <div>Description: <%=@channel.description%></div>
+        <div><p>Name: <%=@channel.name%></div>
+        <div><p>Description: <%=@channel.description%></p></div>
     </div>
     <%@channel.posts.each do |post|%>
         <div class = "content">

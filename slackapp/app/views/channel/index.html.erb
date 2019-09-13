@@ -1,8 +1,22 @@
 <head>
   <title>Browse Channels</title>
   <style>
+  
+    body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #4D394B !important;
+        }
+      
+    h2 {
+      color: lightgray;
+    }
+
     a{
-       text-decoration: none;
+      text-decoration: none;
+      color: white;
     }
     .big{
       display: grid;
@@ -22,13 +36,14 @@
     }
     .one{
         border: 1px solid black;
-        grid-column: 1;
-        background-color: lightblue;
+        grid-column: 1; 
+        background-color: #0C9689 !important;
     }
+
     .two{
         border: 1px solid black;
         grid-column: 2;
-        background-color: white;
+        background-color: #5C9689 !important;
     }
     .three{
         border: 1px solid black;
@@ -47,7 +62,7 @@
   </style>
 </head>
 <body>
-Hello <%=@user.display_name%>
+<h2>Hello <%=@user.display_name%></h2>
 <div class = "big">
     <div class = "new">
         <a class = "button" href = "/channel/new">Create New Channel</a>
