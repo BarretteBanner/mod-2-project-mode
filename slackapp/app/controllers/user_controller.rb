@@ -13,7 +13,7 @@ class UserController < ApplicationController
     end
 
     def create
-     
+      
         user = User.create({
           full_name: params[:full_name],
           display_name: params[:display_name],
@@ -28,10 +28,10 @@ class UserController < ApplicationController
       def update
         @user = User.find(params[:id])
         @user.update({
-          full_name: params[:fullname],
-          display_name: params[:displayname],
+          full_name: params[:full_name],
+          display_name: params[:display_name],
           bio: params[:bio],
-          age: params[:age],
+          age: @user.age,
         })
         redirect_to '/user/'
       end

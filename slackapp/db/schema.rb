@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_09_192947) do
+ActiveRecord::Schema.define(version: 2019_09_12_161807) do
 
   create_table "channels", force: :cascade do |t|
     t.string "name"
     t.string "description"
+  end
+
+  create_table "dms", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "message"
+    t.integer "dm_id"
+    t.integer "user_id"
   end
 
   create_table "posts", force: :cascade do |t|
